@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+{% endblock %}
+
+{% block body %}
+    
+
+    <form action="?c=user&t=update&id={{user.id}}" method="post">
+        {{ user.id }}
+        <ul>
+        <li>
+            <label for="name">Nom&nbsp;:</label>
+            <input type="text" id="nom" name="name"  value="{{ user.name }}"/>
+        </li>
+        <li>
+            <label for="name">Prenom&nbsp;:</label>
+            <input type="text" id="prenom" name="firstname" value="{{ user.firstName }}"/>
+        </li>
+        <li>
+            <label for="password">Mot de passe&nbsp;:</label>
+            <input type="password" id="password" name="password" value="{{ user.password }}"/>
+        </li>
+        </ul>
+
+        <div class="button">
+            <button type="submit" name="submit">Modifier</button>
+        </div>
+    </form>
+
+  {% endblock %}

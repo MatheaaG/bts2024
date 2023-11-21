@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+{% endblock %}
+
+{% block body %}
+    
+
+    <form action="?c=user&t=insert" method="post">
+        <ul>
+        <li>
+            <label for="name">Nom&nbsp;:</label>
+            <input type="text" id="nom" name="user_nom" />
+        </li>
+        <li>
+            <label for="name">Prenom&nbsp;:</label>
+            <input type="text" id="prenom" name="user_prenom" />
+        </li>
+        <li>
+            <label for="password">Mot de passe&nbsp;:</label>
+            <input type="password" id="password" name="user_password"/>
+        </li>
+        </ul>
+
+        <div class="button">
+            <button type="submit" name="submit">Créer</button>
+        </div>
+    </form>
+
+  {% endblock %}

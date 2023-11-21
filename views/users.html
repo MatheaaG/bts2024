@@ -1,0 +1,41 @@
+
+{% extends "base.html" %}
+	{% block body %}
+	<table id='tab' class="dt-body-center">
+        <thead> 
+            <tr><th>Nom</th><th>Prenom</th><th>Editer</th><th>Supprimer</th></tr> 
+        </thead>
+        <tbody> 
+			{% for user in users %}
+            <tr>
+				<td>{{user.name}}</td>
+				<td>{{user.firstname}}</td>
+				<td><a href="?c=user&t=edit&id={{user.id}}"><button id='edit'>Editer</button></a></td>
+				<td><a href="?c=user&t=delete&id={{user.id}}"><button id="delete">Supprimer</button></a></td>
+			</tr>
+            {% endfor %}
+        </tbody> 	
+    </table>
+
+	<button>Create</button>
+	
+
+	{% endblock %}
+
+	{% block script %}
+	<script>
+	$(document).ready(function () {
+		$('#tab').DataTable({
+			columnDefs: [
+				{
+					className: 'dt-body-right'
+				}
+			]
+		});
+	});
+	</script>
+	{% endblock %}
+
+
+
+
